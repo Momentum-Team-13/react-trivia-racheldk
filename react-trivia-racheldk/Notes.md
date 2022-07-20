@@ -16,9 +16,15 @@
     [x] CategoryList component 
     [x] ajax request made 
     [ ] data rendered on page 
+[ ] trivia categories selectable
+    [x] each category button
+    [ ] button event handler to change selection state
+    [ ] ternary: selection state ? go to questions screen (send selected category for API request): category list screen 
+[ ] question component 
+    [ ]
 
 ## Goals in order: 
-[ ] list of categories from the Trivia API showing up on the page.
+[x] list of categories from the Trivia API showing up on the page.
 [ ] trivia categories selectable. 
     [ ] request 10+ questions for that category
     [ ] limit to multiple choice (for now)
