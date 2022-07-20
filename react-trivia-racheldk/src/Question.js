@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Question ({ questionList }) {
-    // const [question, setQuestion] = useState(questionList[0])
-    // const [index, setIndex] = useState(0)
+function Question ({ categoryURL }) {
+    // const [questionList, setQuestionList] = useState()
+    const [question, setQuestion] = useState()
+    // // const [index, setIndex] = useState(0)
 
-    // useEffect(() => {
-    //     setQuestion(questionList[index])
-    // }, [questionList, index])
+   
 
+    useEffect(() => {
+        console.log(`url: ${categoryURL}`)
+        axios
+        .get(categoryURL)
+        .then((res) => setQuestion(res.data.results[0].question)
+        // .then((res) => setQuestion(res.data.results)
+    )}, [])
     
     return (
         <div>
             <h1>Question</h1>
-            <p>{questionList[0].category}</p>
-            <p>question: {questionList[0].question}</p>
+            <p>{question}</p>
+            {/* <p>question: {question[0].question}</p> */}
         </div>
 
 )
@@ -22,9 +28,3 @@ function Question ({ questionList }) {
 
 export default Question 
 
-
-// useEffect(() => {
-//     axios
-//     .get('https://opentdb.com/api.php?amount=10&category=9')
-//     .then((res) => setQuestion(res.data.results)
-// )}, [])

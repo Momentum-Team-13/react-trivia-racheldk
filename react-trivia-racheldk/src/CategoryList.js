@@ -4,32 +4,31 @@ import Question from './Question'
 
 function CategoryList ({categories}) {
     const [selectedCat, setSelectedCat] = useState(null)
-    const [categoryURL, setCategoryURL] = useState(`https://opentdb.com/api.php?amount=10&category=9&type=multiple`)
-    const [questionList, setQuestionList] = useState()
+    const [categoryURL, setCategoryURL] = useState()
+
 
     const handleSelectedCat = (cat) => {
         console.log(`seclected category: ${cat.name}, id: ${cat.id}`)
         setSelectedCat(cat)
-        setCategoryURL(`https://opentdb.com/api.php?amount=10&category=${cat.id}&type=multiple`)
-        console.log(`url: ${categoryURL}`)
+        makeURL(cat)
+    }
+    // console.log(`seletedCat: ${selectedCat}`)
+
+    const makeURL = (selectedCat) => {
+        setCategoryURL(`https://opentdb.com/api.php?amount=10&category=${selectedCat.id}&type=multiple`)
     }
 
-    useEffect(() => {
-        axios
-        .get(categoryURL)
-        .then((res) => setQuestionList(res.data.results)
-    )}, [])
 
     return (
         <div>
             {selectedCat ? (
-                <Question questionList={questionList}/>
+                <Question categoryURL={categoryURL}/>
                 ) : (
+
                 categories.map((category) =>
                     <div>
                     <button onClick={()=>handleSelectedCat(category)}>{category.name}</button>
                     </div>
-                  
                 )
             )}
 
