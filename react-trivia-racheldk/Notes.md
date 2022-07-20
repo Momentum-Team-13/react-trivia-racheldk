@@ -13,7 +13,9 @@
     [x] correct/incorrect answer
 [x] plan components
 [ ] list of categories from the Trivia API showing up on the page.
-    [ ] 
+    [x] CategoryList component 
+    [x] ajax request made 
+    [ ] data rendered on page 
 
 ## Goals in order: 
 [ ] list of categories from the Trivia API showing up on the page.
