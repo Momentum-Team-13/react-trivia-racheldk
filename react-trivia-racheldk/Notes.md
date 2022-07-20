@@ -12,16 +12,39 @@
     [x] question "screen"
     [x] correct/incorrect answer
 [x] plan components
-[ ] list of categories from the Trivia API showing up on the page.
+[x] list of categories from the Trivia API showing up on the page.
     [x] CategoryList component 
     [x] ajax request made 
-    [ ] data rendered on page 
+    [x] data rendered on page 
 [ ] trivia categories selectable
     [x] each category button
-    [ ] button event handler to change selection state
-    [ ] ternary: selection state ? go to questions screen (send selected category for API request): category list screen 
+    [x] button event handler to change selection state
+    [x] ternary: selection state ? go to questions screen (send selected category for API request): category list screen 
 [ ] question component 
-    [ ]
+    [x] make file
+    [x] connect file
+    [x] pass in selectedCat as props 
+    [ ] axios request for questions 
+        [x] hardcode category
+        [ ] category from data
+    [ ] state: question 
+    [ ] state: index 
+    [ ] display one question and it's answers 
+    [ ] make answers clickable 
+    [ ] click launches compare function 
+    [ ] result of compare function render correct or incorrect screen 
+[ ] correct component
+    [ ] make file
+    [ ] connect file 
+    [ ] next button
+    [ ] button clicked goes to next question 
+    [ ] pass as props: question, index
+[ ] incorrect component  
+    [ ] make file
+    [ ] connect file 
+    [ ] next button
+    [ ] button clicked goes to next question 
+    [ ] pass as props: question, index   
 
 ## Goals in order: 
 [x] list of categories from the Trivia API showing up on the page.
