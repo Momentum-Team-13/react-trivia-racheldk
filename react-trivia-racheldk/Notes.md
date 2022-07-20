@@ -16,7 +16,7 @@
     [x] CategoryList component 
     [x] ajax request made 
     [x] data rendered on page 
-[ ] trivia categories selectable
+[x] trivia categories selectable
     [x] each category button
     [x] button event handler to change selection state
     [x] ternary: selection state ? go to questions screen (send selected category for API request): category list screen 
@@ -29,7 +29,8 @@
         [ ] category from data
     [ ] state: question 
     [ ] state: index 
-    [ ] display one question and it's answers 
+    [ ] display one question 
+        [ ] and it's answers 
     [ ] make answers clickable 
     [ ] click launches compare function 
     [ ] result of compare function render correct or incorrect screen 
