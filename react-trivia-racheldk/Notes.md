@@ -48,7 +48,14 @@
     [x] next button
     [x] button clicked goes to next question 
     [x] pass as props: index, statechanger function 
-[ ] quiz can end     
+[ ] quiz can end 
+    [ ] new "screen" with:
+        [ ] if index = 9, show screen. or if index <9 show question screen 
+        [ ] game over
+        [ ] total score
+        [ ] start new game button (to return to first screen...by resetting selectedCat in CategoryList)
+[ ] shuffle answers     
+[ ] make loading screen for when data isn't received yet 
 [ ] disable buttons after user chooses answer? 
 [ ] answer state? unanswered displays question, answered displays correct/incorrect?       
 

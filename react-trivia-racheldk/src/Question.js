@@ -8,25 +8,29 @@ function Question ({ categoryURL }) {
     const [index, setIndex] = useState(0)
     // const [question, setQuestion] = useState(questionList[index])
     const [userAnswer, setUserAnswer] = useState(null)
-    const [correctAnswer, setCorrectAnswer] = useState(null)
+    // const [correctAnswer, setCorrectAnswer] = useState(null)
     const [answered, setAnswered] = useState(null)
 
     const handleAnswers = (userAnswer) => {
         setUserAnswer(userAnswer)
-        setCorrectAnswer(questionList[index].correct_answer)
-        evaluateAnswers(userAnswer, correctAnswer)
+        evaluateAnswers(userAnswer, questionList[index].correct_answer)
     }
-
+    
     const evaluateAnswers = (userAnswer, correctAnswer) =>
-        {userAnswer === correctAnswer ? (
-            // if userAnswer is the same as correctAnswer, setAnswered to correct
-            setAnswered("correct")
+    {userAnswer === correctAnswer ? (
+        // if userAnswer is the same as correctAnswer, setAnswered to correct
+        setAnswered("correct")
         ) : (
             // if userAnswer is not the same as correctAnswer, setAnswered to incorrect
             setAnswered("incorrect")
-        )}
+            )}
 
-    
+    const handleNext = () => {
+        setIndex(index+1)
+        setAnswered(null)
+    }        
+                    
+            
     useEffect(() => {
         console.log(`url: ${categoryURL}`)
         axios
@@ -34,7 +38,7 @@ function Question ({ categoryURL }) {
         .then((res) => {
             setQuestionList(res.data.results)
         }
-        )}, [])  
+    )}, [])  
 
 
     // useEffect(() =>{
@@ -54,42 +58,23 @@ function Question ({ categoryURL }) {
                 {questionList[index].incorrect_answers.map((answer) =>
                 <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>
                 )}
+
             </div>
                 {(answered === "correct") ? (
                     <>
                         <p>userAnswer: {userAnswer}</p>
-                        <p>correctAnswer: {correctAnswer}</p>
-                        <Correct index={index} stateChanger={setIndex}/>
+                        <p>correctAnswer: {questionList[index].correct_answer}</p>
+                        <Correct handleNext={handleNext}/>
                     </>   
                 ) : (answered === "incorrect") ? (
                     <>
                         <p>userAnswer: {userAnswer}</p>
-                        <p>correctAnswer: {correctAnswer}</p>
-                        <Incorrect index={index} stateChanger={setIndex}/>
+                        <p>correctAnswer: {questionList[index].correct_answer}</p>
+                        <Incorrect handleNext={handleNext}/>
                     </>
                 ) : (
                     'No answer chosen'
                 )}
-
-
-            {/* {userAnswer === correctAnswer ? (
-                    // go to Correct component
-                    // console.log('you are correct!')
-                    <>
-                        <p>userAnswer: {userAnswer}</p>
-                        <p>correctAnswer: {correctAnswer}</p>
-                        <Correct />
-                    </>
-                    ) : (
-                        // go to Incorrect component 
-                    // console.log('nope, that is wrong')
-                    <>
-                        <p>userAnswer: {userAnswer}</p>
-                        <p>correctAnswer: {correctAnswer}</p>
-                        <Incorrect />
-                    </>
-                )
-                } */}
             </div>
             )
 }

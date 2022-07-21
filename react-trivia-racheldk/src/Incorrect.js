@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Incorrect ({index, stateChanger}) {
+function Incorrect ({handleNext}) {
     return (
         <div>
             <h1>Incorrect!</h1>
             <div>
-                <button type="button" onClick={() => {stateChanger(index+1)}}
+                <button type="button" onClick={() => {handleNext()}}
                 >Next Question</button>
             </div>
         </div>
