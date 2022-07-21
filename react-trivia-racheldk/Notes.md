@@ -26,22 +26,22 @@
     [x] pass in selectedCat as props 
     [ ] axios request for questions 
         [x] hardcode category
-        [ ] category from data
+        [x] category from data
     [x] state: question 
-    [ ] state: index 
+    [x] state: index 
     [x] display one question 
         [x] and it's answers 
     [x] make answers clickable
 **FIX** [ ] answers take 2 clicks to fully register - something about lifecycles again?     
     [x] click launches compare function 
-    [ ] result of compare function render correct or incorrect screen 
+    [x] result of compare function updates answer state
 [ ] correct component
     [x] make file
     [x] connect file 
-**FIX** [ ] Correct component already showing when question loads     
+    [x] Fixed: Correct component already showing when question loads     
     [ ] next button
     [ ] button clicked goes to next question 
-    [ ] pass as props: question, index
+    [ ] pass as props: questionList, index
 [ ] incorrect component  
     [x] make file
     [x] connect file 

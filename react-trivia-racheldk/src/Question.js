@@ -5,15 +5,15 @@ import Incorrect from './Incorrect'
 
 function Question ({ categoryURL }) {
     const [questionList, setQuestionList] = useState([])
-    const [question, setQuestion] = useState(null)
-    // const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(0)
+    // const [question, setQuestion] = useState(questionList[index])
     const [userAnswer, setUserAnswer] = useState(null)
     const [correctAnswer, setCorrectAnswer] = useState(null)
     const [answered, setAnswered] = useState(null)
 
     const handleAnswers = (userAnswer) => {
         setUserAnswer(userAnswer)
-        setCorrectAnswer(questionList[0].correct_answer)
+        setCorrectAnswer(questionList[index].correct_answer)
         evaluateAnswers(userAnswer, correctAnswer)
     }
 
@@ -37,21 +37,21 @@ function Question ({ categoryURL }) {
         )}, [])  
 
 
-    // useEffect((questionList) =>{
-        // setQuestion(questionList[0])
-        // console.log(questionList[0])
-    // })    
+    // useEffect(() =>{
+    //     setQuestion(questionList[index])
+    //     console.log(questionList[index])
+    // }, [questionList, index])    
     
     return (
         <div>
             <h1>Question</h1>
             {questionList.length>0 && 
             (<div>
-            <p>{questionList[0].question}</p>
+            <p>{questionList[index].question}</p>
             <div>
-                <button type="button" value={questionList[0].correct_answer} onClick={(e)=>handleAnswers(e.target.value)}>{questionList[0].correct_answer}</button>
+                <button type="button" value={questionList[index].correct_answer} onClick={(e)=>handleAnswers(e.target.value)}>{questionList[index].correct_answer}</button>
 
-                {questionList[0].incorrect_answers.map((answer) =>
+                {questionList[index].incorrect_answers.map((answer) =>
                 <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>
                 )}
             </div>
