@@ -54,6 +54,7 @@ function Question ({ categoryURL }) {
         
         return (
             <div>
+                <div>Total score: {score}</div>
             { gameOver === true ? (
                 <GameOver />
             ):  
@@ -73,7 +74,7 @@ function Question ({ categoryURL }) {
                         <>
                             <p>userAnswer: {userAnswer}</p>
                             <p>correctAnswer: {questionList[index].correct_answer}</p>
-                            <Correct index={index} handleNext={handleNext} handleEndGame={handleEndGame} />
+                            <Correct index={index} handleNext={handleNext} handleEndGame={handleEndGame} score={score} setScore={setScore} />
                         </>   
                     ) : (answered === "incorrect") ? (
                         <>

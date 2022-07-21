@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import GameOver from './GameOver'
 
-function Correct ({index, handleNext, handleEndGame}) {
+function Correct ({index, handleNext, handleEndGame, score, setScore}) {
+    useEffect(() => {
+        setScore(score+1)
+    }, [])
+    
     return (
         <div>
             <h1>Correct!</h1>
+            {/* <div>Score: {score}</div> */}
             { index<9 ? (
                 <div>
                     <button type="button" onClick={() =>{handleNext()}}

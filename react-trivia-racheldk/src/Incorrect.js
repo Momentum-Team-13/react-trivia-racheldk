@@ -12,7 +12,7 @@ function Incorrect ({index, handleNext, handleEndGame}) {
                 </div>
             ) : (
                 <div>
-                    <button type="button" onClick={() => handleEndGame}>See Final Score</button>
+                    <button type="button" onClick={() => handleEndGame()}>See Final Score</button>
                 </div>
             )
             }
