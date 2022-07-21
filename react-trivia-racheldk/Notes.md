@@ -36,17 +36,20 @@
     [x] click launches compare function 
     [ ] result of compare function render correct or incorrect screen 
 [ ] correct component
-    [ ] make file
-    [ ] connect file 
+    [x] make file
+    [x] connect file 
+**FIX** [ ] Correct component already showing when question loads     
     [ ] next button
     [ ] button clicked goes to next question 
     [ ] pass as props: question, index
 [ ] incorrect component  
-    [ ] make file
-    [ ] connect file 
+    [x] make file
+    [x] connect file 
     [ ] next button
     [ ] button clicked goes to next question 
-    [ ] pass as props: question, index   
+    [ ] pass as props: question, index 
+[ ] disable buttons after user chooses answer? 
+[ ] answer state? unanswered displays question, answered displays correct/incorrect?       
 
 ## Goals in order: 
 [x] list of categories from the Trivia API showing up on the page.
