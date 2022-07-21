@@ -44,9 +44,9 @@ function Question ({ categoryURL }) {
     
     return (
         <div>
-            <h1>Question</h1>
             {questionList.length>0 && 
             (<div>
+                <h1>Question {index +1} of 10</h1>
             <p>{questionList[index].question}</p>
             <div>
                 <button type="button" value={questionList[index].correct_answer} onClick={(e)=>handleAnswers(e.target.value)}>{questionList[index].correct_answer}</button>
@@ -59,13 +59,13 @@ function Question ({ categoryURL }) {
                     <>
                         <p>userAnswer: {userAnswer}</p>
                         <p>correctAnswer: {correctAnswer}</p>
-                        <Correct />
+                        <Correct index={index} stateChanger={setIndex}/>
                     </>   
                 ) : (answered === "incorrect") ? (
                     <>
                         <p>userAnswer: {userAnswer}</p>
                         <p>correctAnswer: {correctAnswer}</p>
-                        <Incorrect />
+                        <Incorrect index={index} stateChanger={setIndex}/>
                     </>
                 ) : (
                     'No answer chosen'

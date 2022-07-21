@@ -39,15 +39,16 @@
     [x] make file
     [x] connect file 
     [x] Fixed: Correct component already showing when question loads     
-    [ ] next button
-    [ ] button clicked goes to next question 
-    [ ] pass as props: questionList, index
+    [x] next button
+    [x] button clicked goes to next question 
+    [x] pass as props: index, statechanger function
 [ ] incorrect component  
     [x] make file
     [x] connect file 
-    [ ] next button
-    [ ] button clicked goes to next question 
-    [ ] pass as props: question, index 
+    [x] next button
+    [x] button clicked goes to next question 
+    [x] pass as props: index, statechanger function 
+[ ] quiz can end     
 [ ] disable buttons after user chooses answer? 
 [ ] answer state? unanswered displays question, answered displays correct/incorrect?       
 
