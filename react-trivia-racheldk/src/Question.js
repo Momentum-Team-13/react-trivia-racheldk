@@ -7,9 +7,7 @@ import GameOver from './GameOver'
 function Question ({ categoryURL, setSelectedCat }) {
     const [questionList, setQuestionList] = useState([])
     const [index, setIndex] = useState(0)
-    // const [question, setQuestion] = useState(questionList[index])
     const [userAnswer, setUserAnswer] = useState(null)
-    // const [correctAnswer, setCorrectAnswer] = useState(null)
     const [answered, setAnswered] = useState(null)
     const [score, setScore] = useState(0)
     const [gameOver, setGameOver] = useState(false)
@@ -19,15 +17,12 @@ function Question ({ categoryURL, setSelectedCat }) {
         evaluateAnswers(userAnswer, questionList[index].correct_answer, score)
     }
     
-    const evaluateAnswers = (userAnswer, correctAnswer, score) =>
+    const evaluateAnswers = (userAnswer, correctAnswer) =>
     {userAnswer === correctAnswer ? (
-        // if userAnswer is the same as correctAnswer, setAnswered to correct
         setAnswered("correct")
-        // setScore(score+1) 
     ) : (
-            // if userAnswer is not the same as correctAnswer, setAnswered to incorrect
-            setAnswered("incorrect")
-            )}
+        setAnswered("incorrect")
+        )}
 
     const handleNext = () => {
         setIndex(index+1)
@@ -35,28 +30,22 @@ function Question ({ categoryURL, setSelectedCat }) {
     }        
 
     const handleEndGame = () => {
-        setGameOver(true)
-        // render new screen 
-        // total score 
-        // button to start a new game 
-        // wherever this is called will also need to have the score sent as a prop  
+        setGameOver(true) 
     }
                     
     useEffect(() => {
         console.log(`url: ${categoryURL}`)
         axios
         .get(categoryURL)
-        .then((res) => {
-            setQuestionList(res.data.results)
-        }
+        .then((res) => setQuestionList(res.data.results)
         )}, [])  
         
         
         return (
             <div>
-                <div>Total score: {score}</div>
+                {/* <div>Total score: {score}</div> */}
             { gameOver === true ? (
-                <GameOver setSelectedCat={setSelectedCat}/>
+                <GameOver setSelectedCat={setSelectedCat} score={score}/>
             ):  
                 questionList.length>0 && 
                 (<div>

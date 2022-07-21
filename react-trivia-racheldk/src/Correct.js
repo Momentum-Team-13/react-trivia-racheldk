@@ -13,7 +13,7 @@ function Correct ({index, handleNext, handleEndGame, score, setScore}) {
             {/* <div>Score: {score}</div> */}
             { index<9 ? (
                 <div>
-                    <button type="button" onClick={() =>{handleNext()}}
+                    <button type="button" onClick={() =>handleNext()}
                     >Next Question</button>
                 </div>
             ) : (
