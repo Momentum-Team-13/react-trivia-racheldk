@@ -27,12 +27,13 @@
     [ ] axios request for questions 
         [x] hardcode category
         [ ] category from data
-    [ ] state: question 
+    [x] state: question 
     [ ] state: index 
-    [ ] display one question 
-        [ ] and it's answers 
-    [ ] make answers clickable 
-    [ ] click launches compare function 
+    [x] display one question 
+        [x] and it's answers 
+    [x] make answers clickable
+**FIX** [ ] answers take 2 clicks to fully register - something about lifecycles again?     
+    [x] click launches compare function 
     [ ] result of compare function render correct or incorrect screen 
 [ ] correct component
     [ ] make file

@@ -5,26 +5,48 @@ function Question ({ categoryURL }) {
     const [questionList, setQuestionList] = useState([])
     // const [question, setQuestion] = useState()
     // const [index, setIndex] = useState(0)
+    const [userAnswer, setUserAnswer] = useState(null)
+    const [correctAnswer, setCorrectAnswer] = useState(null)
 
-//    useEffect(()=>{
-//     setQuestion(questionList[index])
-//    })
+    const defineAnswers = (answer) => {
+        setCorrectAnswer(questionList[0].correct_answer)
+        setUserAnswer(answer)
+        console.log(`userAnswer: ${userAnswer}`)
+        console.log(`correctAnswer: ${correctAnswer}`)
+        compareAnswer(userAnswer, correctAnswer)
+    }
+
+    const compareAnswer = () => {
+        {userAnswer === correctAnswer ? (
+            console.log('you are correct!')
+            ) : (
+            console.log('nope, that is wrong')
+        )}
+        }
 
     useEffect(() => {
         console.log(`url: ${categoryURL}`)
         axios
         .get(categoryURL)
         .then((res) => setQuestionList(res.data.results)
-        // question = value of question key in 1st object in the array of results from the API  
-        // .then((res) => setQuestion(res.data.results[0].question)
-        )}, [])
-        // console.log('question: ' + questionList[0].question)   
+        // .then((res) => setCorrectAnswer(res.data.results[0].correct_answer))
+        )}, [])  
         
         return (
             <div>
             <h1>Question</h1>
             {questionList.length>0 && 
-            (<p>{questionList[0].question}</p>)
+            (<div>
+            <p>{questionList[0].question}</p>
+            <div>
+                <button type="button" value={questionList[0].correct_answer} onClick={(e)=>defineAnswers(e.target.value)}>{questionList[0].correct_answer}</button>
+
+                {questionList[0].incorrect_answers.map((answer) =>
+                <button type="button" value={answer} onClick={(e)=>defineAnswers(e.target.value)}>{answer}</button>
+                )}
+            </div>
+            </div>
+            )
 }
         </div>
 
