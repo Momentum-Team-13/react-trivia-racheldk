@@ -4,7 +4,7 @@ import Correct from './Correct'
 import Incorrect from './Incorrect'
 import GameOver from './GameOver'
 
-function Question ({ categoryURL }) {
+function Question ({ categoryURL, setSelectedCat }) {
     const [questionList, setQuestionList] = useState([])
     const [index, setIndex] = useState(0)
     // const [question, setQuestion] = useState(questionList[index])
@@ -56,7 +56,7 @@ function Question ({ categoryURL }) {
             <div>
                 <div>Total score: {score}</div>
             { gameOver === true ? (
-                <GameOver />
+                <GameOver setSelectedCat={setSelectedCat}/>
             ):  
                 questionList.length>0 && 
                 (<div>
@@ -74,13 +74,13 @@ function Question ({ categoryURL }) {
                         <>
                             <p>userAnswer: {userAnswer}</p>
                             <p>correctAnswer: {questionList[index].correct_answer}</p>
-                            <Correct index={index} handleNext={handleNext} handleEndGame={handleEndGame} score={score} setScore={setScore} />
+                            <Correct index={index} handleNext={handleNext} handleEndGame={handleEndGame} score={score} setScore={setScore}/>
                         </>   
                     ) : (answered === "incorrect") ? (
                         <>
                             <p>userAnswer: {userAnswer}</p>
                             <p>correctAnswer: {questionList[index].correct_answer}</p>
-                            <Incorrect handleNext={handleNext} index={index} handleEndGame={handleEndGame}/>
+                            <Incorrect handleNext={handleNext} index={index} handleEndGame={handleEndGame} />
                         </>
                     ) : (
                         'No answer chosen'

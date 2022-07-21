@@ -22,7 +22,7 @@ function CategoryList ({categories}) {
     return (
         <div>
             {selectedCat ? (
-                <Question categoryURL={categoryURL}/>
+                <Question categoryURL={categoryURL} setSelectedCat={setSelectedCat}/>
                 ) : (
 
                 categories.map((category) =>

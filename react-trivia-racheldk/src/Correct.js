@@ -18,7 +18,7 @@ function Correct ({index, handleNext, handleEndGame, score, setScore}) {
                 </div>
             ) : (
                 <div>
-                    <button type="button" onClick={() => handleEndGame}>See Final Score</button>
+                    <button type="button" onClick={() => handleEndGame()}>See Final Score</button>
                 </div>
             )
             }

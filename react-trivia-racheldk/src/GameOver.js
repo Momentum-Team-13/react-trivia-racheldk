@@ -1,10 +1,13 @@
 import React from 'react'
 
-function GameOver () {
+function GameOver ({setSelectedCat}) {
     return (
-        <h1>Game Over</h1>
-        
-        // start new game button 
+        <div>
+            <h1>Game Over</h1>
+            <div>
+                <button type="button" onClick={()=>setSelectedCat(null)}>Start New Game</button>
+            </div>
+        </div>
     )
 }
 
