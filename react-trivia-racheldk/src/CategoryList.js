@@ -22,14 +22,26 @@ function CategoryList ({categories}) {
     return (
         <div>
             {selectedCat ? (
-                <Question categoryURL={categoryURL} setSelectedCat={setSelectedCat}/>
+                <div>
+                    <Question categoryURL={categoryURL} setSelectedCat={setSelectedCat}/>
+                </div>
                 ) : (
-
-                categories.map((category) =>
                     <div>
-                    <button onClick={()=>handleSelectedCat(category)}>{category.name}</button>
-                    </div>
-                )
+                        <div>
+                            <div className='section is-small'>
+                                <div className="title">Trivia</div>
+                                <div className='subtitle'>Pick a Category</div>
+                            </div>
+                            </div>
+                        <div className='flex-box'>
+                        {categories.map((category) =>
+                        <div >
+                            <div className='button is-info is-outlined m-2' onClick={()=>handleSelectedCat(category)}>{category.name}
+                            </div>
+                        </div>
+                        )}
+                        </div>
+                    </div>   
             )}
 
         </div>

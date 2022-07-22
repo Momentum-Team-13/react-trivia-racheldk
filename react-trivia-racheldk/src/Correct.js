@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Confetti from 'react-confetti'
 
 function Correct ({index, handleNext, handleEndGame, score, setScore}) {
     useEffect(() => {
@@ -7,15 +8,15 @@ function Correct ({index, handleNext, handleEndGame, score, setScore}) {
     
     return (
         <div>
-            <h1>Correct!</h1>
-            {/* <div>Score: {score}</div> */}
+            <Confetti />
+            <div className='has-text-centered'>You got it!</div>
             { index<9 ? (
-                <div>
+                <div className='has-text-right'>
                     <button type="button" onClick={() =>handleNext()}
                     >Next Question</button>
                 </div>
             ) : (
-                <div>
+                <div className='has-text-right'>
                     <button type="button" onClick={() => handleEndGame()}>See Final Score</button>
                 </div>
             )

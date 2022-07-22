@@ -50,41 +50,35 @@ function Question ({ categoryURL, setSelectedCat }) {
                 <GameOver setSelectedCat={setSelectedCat} score={score}/>
             ):  
                 questionList.length>0 && 
-                (<div>
-                    <h1>Question {index +1} of 10</h1>
-                <p>{questionList[index].question}</p>
-                <div>
-                    <AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} />
-                    {/* {randomAnswers.map((answer) =>
-                    <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>)} */}
-
-                    {/* <button type="button" value={questionList[index].correct_answer} onClick={(e)=>handleAnswers(e.target.value)}>{questionList[index].correct_answer}</button>
-
-                    {questionList[index].incorrect_answers.map((answer) =>
-                    <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>
-                    )} */}
-
-                </div>
-                    {(answered === "correct") ? (
-                        <>
-                            <p>userAnswer: {userAnswer}</p>
-                            <p>correctAnswer: {questionList[index].correct_answer}</p>
-                            <Correct index={index} handleNext={handleNext} handleEndGame={handleEndGame} score={score} setScore={setScore}/>
-                        </>   
-                    ) : (answered === "incorrect") ? (
-                        <>
-                            <p>userAnswer: {userAnswer}</p>
-                            <p>correctAnswer: {questionList[index].correct_answer}</p>
-                            <Incorrect handleNext={handleNext} index={index} handleEndGame={handleEndGame} />
-                        </>
-                    ) : (
-                        'No answer chosen'
-                    )}
-                </div>
+                (<div className="question card">
+                    <div className=''>
+                        <div className="has-text-centered">{questionList[index].question}</div>
+                        <div className="has-text-centered"><AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} /></div>
+                            {(answered === "correct") ? (
+                                <>
+                                    {/* <p>userAnswer: {userAnswer}</p>
+                                    <p>correctAnswer: {questionList[index].correct_answer}</p> */}
+                                    <Correct index={index} handleNext={handleNext} handleEndGame={handleEndGame} score={score} setScore={setScore}/>
+                                </>   
+                            ) : (answered === "incorrect") ? (
+                                <>
+                                    {/* <p>userAnswer: {userAnswer}</p>
+                                    <p>correctAnswer: {questionList[index].correct_answer}</p> */}
+                                    <Incorrect handleNext={handleNext} index={index} handleEndGame={handleEndGame} correctAnswer={questionList[index].correct_answer}/>
+                                </> 
+                            ) : (
+                                ''
+                                )}
+                                <div className='card-footer'>
+                                    <div className='card-footer-item'>Question {index +1} of 10</div>
+                                    <div className='card-footer-item'>{questionList[index].category}</div>
+                                    <div className='card-footer-item'>Current Score: {score}</div>
+                                </div>
+                    </div>
+                </div>  
                 )
                 }
-
-        </div>
+            </div>
 
 )
 }

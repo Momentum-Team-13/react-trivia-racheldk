@@ -2,6 +2,8 @@ import './App.css';
 import React, { useEffect, useState } from 'react'
 import CategoryList from './CategoryList';
 import axios from 'axios'
+import 'bulma/css/bulma.min.css';
+
 
 
 function App() {
@@ -14,8 +16,14 @@ function App() {
 }, []) 
 
   return (
-    <div>
-      <CategoryList categories={categories}/>
+    <div className=''>
+      {/* <div className='section is-small'>
+        <div className="title">Trivia</div>
+        <div className='subtitle'>Pick a Category</div>
+      </div> */}
+      <div className='chunk'>
+        <CategoryList categories={categories}/>
+      </div>
     </div>
   );
 }

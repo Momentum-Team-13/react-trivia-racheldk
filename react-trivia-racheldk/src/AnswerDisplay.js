@@ -6,9 +6,6 @@ function AnswerDisplay ({questionList, index, handleAnswers }) {
 
     const shuffleAnswers = (answerChoices) => {
         setRandomAnswers(answerChoices.sort(() => Math.random() - 0.5))
-        // do the random stuff. 
-        // push to randomAnswers array 
-        // but when will this be called?! 
     }
 
     
@@ -21,16 +18,19 @@ function AnswerDisplay ({questionList, index, handleAnswers }) {
     useEffect (() =>{
         answerChoices.push(questionList[index].correct_answer)
         shuffleAnswers(answerChoices)
-    }, [answerChoices])
+    }, [answerChoices, questionList, index])
     
     return (
-        <div>
+        <div className='card-content'>
             { answerChoices.length > 0 &&
             (<>
             {/* <div>answerChoices: {answerChoices}</div>
             <div>randomAnswers: {randomAnswers}</div> */}
                 {randomAnswers.map((answer) =>
-                    <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>)}
+                <div className="m-2">
+                    <button type="button" className="button is-info is-outlined"value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>
+                </div>)}
+                
             </>) 
             }
         </div>
@@ -40,10 +40,3 @@ function AnswerDisplay ({questionList, index, handleAnswers }) {
 export default AnswerDisplay
 
 
-
-
-
-// add correct answer to answerChoices
-// map through incorrect answres to add all incorrect answers to answerChoices
-// shuffle answers
-// return: map through randomAnswers to display

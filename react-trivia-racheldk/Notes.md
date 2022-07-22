@@ -20,7 +20,7 @@
     [x] each category button
     [x] button event handler to change selection state
     [x] ternary: selection state ? go to questions screen (send selected category for API request): category list screen 
-[ ] question component 
+[x] question component 
     [x] make file
     [x] connect file
     [x] pass in selectedCat as props 
@@ -54,15 +54,22 @@
         [x] game over
         [x] total score
         [x] start new game button (to return to first screen...by resetting selectedCat in CategoryList)
-[ ] shuffle answers  
+[x] shuffle answers  
     (see bookmarked articles)
-    [ ] move answer things to a separate component from the question? or have a giant component? 
-    [ ] make array of correct and incorrect answers 
-    [ ] randomize that array 
-    [ ] randomizedArray.map() to render answers
+    [x] move answer things to a separate component from the question? or have a giant component? 
+    [x] make array of correct and incorrect answers 
+    [x] randomize that array 
+    [x] randomizedArray.map() to render answers
 [ ] make loading screen for when data isn't received yet 
-[ ] deploy
+[x] deploy
 [ ] style
+    [ ] find library 
+    [ ] CategoryList
+    [ ] Question
+    [ ] AnswerDisplay
+    [ ] Correct
+    [ ] Incorrect
+    
 
 
 [ ] disable buttons after user chooses answer? 
@@ -88,7 +95,7 @@
 
 ## Requirements
 [x] A user can select a category and take a quiz in that category. A quiz should have at least 10 questions in it. 
-[ ] A quiz shows the user one question at a time. The possible answers should be shown in a random order so that the correct answer isn't in the same place every time.
+[x] A quiz shows the user one question at a time. The possible answers should be shown in a random order so that the correct answer isn't in the same place every time.
 [x] The application tracks the user's answers and shows results. You might do this as they go through each question or at the end, or both.
 [x] Your React application should be broken up into 3 or more components.
 [x] Your application should have two or more "screens." In a traditional web application, we'd think of these as different pages or views.
