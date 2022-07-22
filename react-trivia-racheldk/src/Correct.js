@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import GameOver from './GameOver'
 
 function Correct ({index, handleNext, handleEndGame, score, setScore}) {
     useEffect(() => {

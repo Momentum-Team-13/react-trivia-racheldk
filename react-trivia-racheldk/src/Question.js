@@ -3,6 +3,7 @@ import axios from 'axios'
 import Correct from './Correct'
 import Incorrect from './Incorrect'
 import GameOver from './GameOver'
+import AnswerDisplay from './AnswerDisplay'
 
 function Question ({ categoryURL, setSelectedCat }) {
     const [questionList, setQuestionList] = useState([])
@@ -17,6 +18,7 @@ function Question ({ categoryURL, setSelectedCat }) {
         evaluateAnswers(userAnswer, questionList[index].correct_answer, score)
     }
     
+
     const evaluateAnswers = (userAnswer, correctAnswer) =>
     {userAnswer === correctAnswer ? (
         setAnswered("correct")
@@ -52,11 +54,15 @@ function Question ({ categoryURL, setSelectedCat }) {
                     <h1>Question {index +1} of 10</h1>
                 <p>{questionList[index].question}</p>
                 <div>
-                    <button type="button" value={questionList[index].correct_answer} onClick={(e)=>handleAnswers(e.target.value)}>{questionList[index].correct_answer}</button>
+                    <AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} />
+                    {/* {randomAnswers.map((answer) =>
+                    <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>)} */}
+
+                    {/* <button type="button" value={questionList[index].correct_answer} onClick={(e)=>handleAnswers(e.target.value)}>{questionList[index].correct_answer}</button>
 
                     {questionList[index].incorrect_answers.map((answer) =>
                     <button type="button" value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>
-                    )}
+                    )} */}
 
                 </div>
                     {(answered === "correct") ? (
