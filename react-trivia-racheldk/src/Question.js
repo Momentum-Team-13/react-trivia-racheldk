@@ -13,11 +13,16 @@ function Question ({ categoryURL, setSelectedCat }) {
     const [score, setScore] = useState(0)
     const [gameOver, setGameOver] = useState(false)
 
+    function decodeHtml(html) {
+        let txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
     const handleAnswers = (userAnswer) => {
         setUserAnswer(userAnswer)
         evaluateAnswers(userAnswer, questionList[index].correct_answer, score)
     }
-    
 
     const evaluateAnswers = (userAnswer, correctAnswer) =>
     {userAnswer === correctAnswer ? (
@@ -51,8 +56,8 @@ function Question ({ categoryURL, setSelectedCat }) {
             ):  
                 questionList.length>0 && 
                 (<div className="question card">
-                    <div className=''>
-                        <div className="has-text-centered has-text-weight-semibold is-size-3 pt-5">{questionList[index].question}</div>
+                    <div>
+                        <div className="has-text-centered has-text-weight-semibold is-size-3 pt-5">{decodeHtml(questionList[index].question)}</div>
                         <div className="has-text-centered"><AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} /></div>
                             {(answered === "correct") ? (
                                 <>

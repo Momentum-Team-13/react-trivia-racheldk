@@ -9,7 +9,7 @@ function Correct ({index, handleNext, handleEndGame, score, setScore}) {
     return (
         <div>
             <Confetti />
-            <div className='has-text-centered'>You got it!</div>
+            <div className='has-text-centered has-text-weight-normal is-size-5'>You got it!</div>
             { index<9 ? (
                 <div className='has-text-right'>
                     <button type="button" className='button is-info is-light mr-4 mb-3' onClick={() =>handleNext()}
