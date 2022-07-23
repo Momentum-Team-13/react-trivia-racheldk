@@ -16,15 +16,9 @@ function App() {
 }, []) 
 
   return (
-    <div className=''>
-      {/* <div className='section is-small'>
-        <div className="title">Trivia</div>
-        <div className='subtitle'>Pick a Category</div>
-      </div> */}
       <div className='chunk'>
         <CategoryList categories={categories}/>
       </div>
-    </div>
   );
 }
 

@@ -4,15 +4,15 @@ import axios from 'axios'
 function Incorrect ({index, handleNext, handleEndGame, correctAnswer}) {
     return (
         <div>
-            <div className='has-text-centered'>Nope, the answer is {correctAnswer}</div>
+            <div className='has-text-centered has-text-weight-normal is-size-5'>Nope, the answer is {correctAnswer}</div>
             { index<9 ? (
                 <div className='has-text-right'>
-                    <button type="button" className='button is-justify-self-flex-end' onClick={() =>{handleNext()}}
+                    <button type="button" className='button is-info is-light mr-4 mb-3 is-outlined' onClick={() =>{handleNext()}}
                     >Next Question</button>
                 </div>
             ) : (
                 <div className='has-text-right'>
-                    <button type="button" onClick={() => handleEndGame()}>See Final Score</button>
+                    <button type="button" className='button is-info is-light mr-4 mb-3' onClick={() => handleEndGame()}>See Final Score</button>
                 </div>
             )
             }

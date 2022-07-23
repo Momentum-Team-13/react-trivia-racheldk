@@ -28,9 +28,9 @@ function CategoryList ({categories}) {
                 ) : (
                     <div>
                         <div>
-                            <div className='section is-small'>
-                                <div className="title">Trivia</div>
-                                <div className='subtitle'>Pick a Category</div>
+                            <div className='mt-6 mb-3'>
+                                <div className="is-size-2 has-text-weight-semibold">Trivia</div>
+                                <div className='is-size-4 has-text-weight-light pt-4'>Pick a Category</div>
                             </div>
                             </div>
                         <div className='flex-box'>

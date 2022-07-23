@@ -52,7 +52,7 @@ function Question ({ categoryURL, setSelectedCat }) {
                 questionList.length>0 && 
                 (<div className="question card">
                     <div className=''>
-                        <div className="has-text-centered">{questionList[index].question}</div>
+                        <div className="has-text-centered has-text-weight-semibold is-size-3 pt-5">{questionList[index].question}</div>
                         <div className="has-text-centered"><AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} /></div>
                             {(answered === "correct") ? (
                                 <>
@@ -69,7 +69,7 @@ function Question ({ categoryURL, setSelectedCat }) {
                             ) : (
                                 ''
                                 )}
-                                <div className='card-footer'>
+                                <div className='card-footer has-text-weight-light mt-5'>
                                     <div className='card-footer-item'>Question {index +1} of 10</div>
                                     <div className='card-footer-item'>{questionList[index].category}</div>
                                     <div className='card-footer-item'>Current Score: {score}</div>

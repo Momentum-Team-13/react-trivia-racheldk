@@ -45,5 +45,5 @@
 .flex-box {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
