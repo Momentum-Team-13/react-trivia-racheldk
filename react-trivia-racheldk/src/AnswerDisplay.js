@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-function AnswerDisplay ({questionList, index, handleAnswers }) {
+function AnswerDisplay ({questionList, index, handleAnswers, decodeHtml }) {
     const [answerChoices, setAnswerChoices] = useState([])
     const [randomAnswers, setRandomAnswers] = useState([])
 
@@ -28,7 +28,7 @@ function AnswerDisplay ({questionList, index, handleAnswers }) {
             <div>randomAnswers: {randomAnswers}</div> */}
                 {randomAnswers.map((answer) =>
                 <div className="m-2">
-                    <button type="button" className="button is-info is-outlined"value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{answer}</button>
+                    <button type="button" className="button is-info is-outlined"value={answer} onClick={(e)=>handleAnswers(e.target.value)}>{decodeHtml(answer)}</button>
                 </div>)}
                 
             </>) 

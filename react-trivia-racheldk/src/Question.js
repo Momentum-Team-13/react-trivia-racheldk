@@ -58,7 +58,7 @@ function Question ({ categoryURL, setSelectedCat }) {
                 (<div className="question card">
                     <div>
                         <div className="has-text-centered has-text-weight-semibold is-size-3 pt-5">{decodeHtml(questionList[index].question)}</div>
-                        <div className="has-text-centered"><AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} /></div>
+                        <div className="has-text-centered"><AnswerDisplay questionList={questionList} index={index} handleAnswers={handleAnswers} decodeHtml={decodeHtml} /></div>
                             {(answered === "correct") ? (
                                 <>
                                     {/* <p>userAnswer: {userAnswer}</p>
@@ -69,7 +69,7 @@ function Question ({ categoryURL, setSelectedCat }) {
                                 <>
                                     {/* <p>userAnswer: {userAnswer}</p>
                                     <p>correctAnswer: {questionList[index].correct_answer}</p> */}
-                                    <Incorrect handleNext={handleNext} index={index} handleEndGame={handleEndGame} correctAnswer={questionList[index].correct_answer}/>
+                                    <Incorrect handleNext={handleNext} index={index} handleEndGame={handleEndGame} correctAnswer={questionList[index].correct_answer} decodeHtml={decodeHtml}/>
                                 </> 
                             ) : (
                                 ''
